@@ -5,8 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Shoes24.Controllers
-{
+
+
     public class UserController : Controller
     {
         dbBANGiayDataContext data = new dbBANGiayDataContext();

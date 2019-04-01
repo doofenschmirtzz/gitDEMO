@@ -173,6 +173,7 @@
 
     <Compile Include="Controllers\HomeController.cs" />
 
+
     <Compile Include="Controllers\ShoesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -181,7 +182,11 @@
 
 
 
+
+    <Compile Include="Controllers\ShoesController.cs" />
+
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -584,6 +589,29 @@
     <Content Include="Views\Shop\Search.cshtml" />
     <Content Include="Views\Shared\Banner.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\User\GetMail.cshtml" />
+    <Content Include="Views\Shoes\Laygiayton.cshtml" />
+    <Content Include="Views\Shoes\Laygiaydac.cshtml" />
+    <Content Include="Views\Shoes\Laygiaycu.cshtml" />
+    <Content Include="Views\Shoes\About.cshtml" />
+    <Content Include="Views\Shoes\Index.cshtml" />
+    <Content Include="Views\Shoes\banner1.cshtml" />
+    <Content Include="Views\Shoes\banner.cshtml" />
+    <Content Include="Views\Shoes\banner2.cshtml" />
+    <Content Include="Views\Shoes\banner3.cshtml" />
+    <Content Include="Views\Shoes\banner4.cshtml" />
+    <Content Include="Views\Shoes\contact.cshtml" />
+    <Content Include="Views\Shoes\Footer.cshtml" />
+    <Content Include="Views\Shoes\slide.cshtml" />
+    <Content Include="Views\Shoes\slide2.cshtml" />
+    <Content Include="Views\Shoes\slide3.cshtml" />
+    <Content Include="Views\Shoes\slide4.cshtml" />
+    <Content Include="Views\Shoes\slideview.cshtml" />
+    <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\User\Thongtinkhachhang.cshtml" />
+    <Content Include="Views\User\Suathongtin.cshtml" />
+    <Content Include="Views\User\DangXuat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
