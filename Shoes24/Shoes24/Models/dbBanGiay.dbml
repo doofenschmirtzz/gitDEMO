@@ -1,5 +1,8 @@
 
+
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SHOPGIAY" Class="dbBanGiayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SHOPGIAY" Class="dbBANGiayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-3PKTJD7\SQLEXPRESS;Initial Catalog=SHOPGIAY;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SHOPGIAYConnectionString" Provider="System.Data.SqlClient" />
 
   <Table Name="dbo.Banner" Member="Banners">
@@ -10,6 +13,8 @@
       <Column Name="Url" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
     </Type>
   </Table>
+
+
 
 
   <Table Name="dbo.Slide" Member="Slides">
@@ -32,6 +37,9 @@
 
       <Association Name="SanPham_ChiTietHoaDon" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
 
+
+      <Association Name="SanPham_ChiTietHoaDon" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
+
     </Type>
   </Table>
   <Table Name="dbo.Contacts" Member="Contacts">
@@ -49,6 +57,10 @@
       <Column Name="UserGroupID" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="RoleID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Group_Credential" Member="Group" ThisKey="UserGroupID" OtherKey="ID" Type="Group" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+
+
+      <Association Name="Role_Credential" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+
 
       <Association Name="Role_Credential" Member="Role" ThisKey="RoleID" OtherKey="ID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
 
@@ -69,6 +81,10 @@
       <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Group_Credential" Member="Credentials" ThisKey="ID" OtherKey="UserGroupID" Type="Credential" />
 
+
+      <Association Name="Group_QuanTriVien" Member="QuanTriViens" ThisKey="ID" OtherKey="GroupID" Type="QuanTriVien" />
+
+
       <Association Name="Group_QuanTriVien" Member="QuanTriViens" ThisKey="ID" OtherKey="GroupID" Type="QuanTriVien" />
 
     </Type>
@@ -77,6 +93,10 @@
     <Type Name="Hang">
       <Column Name="MaHangSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenHangSanPham" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+
+
+      <Association Name="Hang_SanPham" Member="SanPhams" ThisKey="MaHangSanPham" OtherKey="MaHangSanPham" Type="SanPham" />
+
 
       <Association Name="Hang_SanPham" Member="SanPhams" ThisKey="MaHangSanPham" OtherKey="MaHangSanPham" Type="SanPham" />
 

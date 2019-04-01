@@ -158,15 +158,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
 
+
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
+
 
     <Compile Include="Controllers\HomeController.cs" />
 
     <Compile Include="Controllers\ShoesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
 
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,7 +182,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbBANGiay.dbml</DependentUpon>
 
+
+    <Compile Include="Models\dbBANGiay1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbBANGiay.dbml</DependentUpon>
+
     </Compile>
+    <Compile Include="Models\Giohang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -397,8 +408,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
 
     <Content Include="Models\dbBanGiay.dbml">
+
+    <Content Include="Models\dbBANGiay.dbml">
+
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbBanGiay.designer.cs</LastGenOutput>
+      <LastGenOutput>dbBANGiay1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
 
@@ -522,12 +536,8 @@
     <Content Include="Views\Shoes\banner3.cshtml" />
     <Content Include="Views\Shoes\banner4.cshtml" />
     <Content Include="Views\Shared\_LayoutShoes.cshtml" />
-    <Content Include="Views\Shared\_LayoutConfirm.cshtml" />
-    <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
-    <Content Include="Views\GioHang\GioHang.cshtml" />
-    <Content Include="Views\Shared\_LayoutGioHang.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -572,6 +582,10 @@
   </ItemGroup>
 
   <ItemGroup>
+
+    <None Include="Models\dbBANGiay.dbml.layout">
+      <DependentUpon>dbBANGiay.dbml</DependentUpon>
+
     </None>
   </ItemGroup>
 
