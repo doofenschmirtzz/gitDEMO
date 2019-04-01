@@ -1,3 +1,4 @@
+E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.Razor.xml
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\ApplicationInsights.config
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\Shoes24.dll.config
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\Shoes24.dll
@@ -77,7 +78,6 @@ E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.Helpers.xml
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.Mvc.xml
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.Optimization.xml
-E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.Razor.xml
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.WebPages.xml
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.WebPages.Deployment.xml
 E:\[Nam 4]\Công Cụ Phát Triển Phần Mềm\[Do An]\gitDEMO\Shoes24\Shoes24\bin\System.Web.WebPages.Razor.xml
