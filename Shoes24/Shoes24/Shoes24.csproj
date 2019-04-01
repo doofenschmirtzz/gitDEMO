@@ -159,9 +159,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
 
 
+
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
 
+
+
+    <Compile Include="Controllers\GioHangController.cs" />
 
     <Compile Include="Controllers\HomeController.cs" />
 
@@ -170,6 +174,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
 
 
     <Compile Include="Controllers\ShopController.cs" />
@@ -184,6 +189,9 @@
 
 
     <Compile Include="Models\dbBANGiay1.designer.cs">
+
+    <Compile Include="Models\dbBANGiay.designer.cs">
+
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbBANGiay.dbml</DependentUpon>
@@ -394,6 +402,7 @@
     <Content Include="Models\dbBANGiay.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>dbBANGiay.designer.cs</LastGenOutput>
+
       <SubType>Designer</SubType>
     </Content>
 
@@ -413,6 +422,7 @@
 
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>dbBANGiay1.designer.cs</LastGenOutput>
+
       <SubType>Designer</SubType>
     </Content>
 
@@ -539,9 +549,14 @@
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\User\GetMail.cshtml" />
+    <Content Include="Views\User\Suathongtin.cshtml" />
+    <Content Include="Views\User\Thongtinkhachhang.cshtml" />
+    <Content Include="Views\Shared\_LayoutGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+
 
 
     <Content Include="Views\Shop\BanneQC.cshtml" />
@@ -562,6 +577,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+
+
+    <Folder Include="Views\GioHang\" />
 
   </ItemGroup>
   <ItemGroup>
