@@ -151,13 +151,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShoesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbBANGiay1.designer.cs">
+    <Compile Include="Models\dbBANGiay.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbBANGiay.dbml</DependentUpon>
@@ -180,7 +181,7 @@
     </Content>
     <Content Include="Models\dbBANGiay.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbBANGiay1.designer.cs</LastGenOutput>
+      <LastGenOutput>dbBANGiay.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -223,9 +224,14 @@
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\User\GetMail.cshtml" />
+    <Content Include="Views\User\Suathongtin.cshtml" />
+    <Content Include="Views\User\Thongtinkhachhang.cshtml" />
+    <Content Include="Views\Shared\_LayoutGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\GioHang\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
