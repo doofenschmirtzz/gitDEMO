@@ -151,15 +151,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
     <Compile Include="Models\dbBANGiay.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbBANGiay.dbml</DependentUpon>
+
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -190,6 +196,8 @@
     <Content Include="Content\style7.css" />
     <Content Include="Content\util.css" />
     <Content Include="Content\util2.css" />
+    <Content Include="Content\PagedList.css" />
+
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="images\1.jpg" />
@@ -259,6 +267,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+
     <Content Include="Models\dbBANGiay.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>dbBANGiay.designer.cs</LastGenOutput>
@@ -273,6 +282,13 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+
+    <Content Include="Models\dbBanGiay.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbBanGiay.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\creditly.js" />
@@ -318,6 +334,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\err401.cshtml" />
     <Content Include="Views\Shared\_LayoutQLSP.cshtml" />
@@ -371,6 +388,30 @@
     <Folder Include="images\icons\" />
     <Folder Include="images\shoes\" />
     <Folder Include="Tinymce\js\" />
+
+    <Content Include="Views\Shoes\About.cshtml" />
+    <Content Include="Views\Shoes\slide.cshtml" />
+    <Content Include="Views\Shoes\slide2.cshtml" />
+    <Content Include="Views\Shoes\slide3.cshtml" />
+    <Content Include="Views\Shoes\slide4.cshtml" />
+    <Content Include="Views\Shoes\Index.cshtml" />
+    <Content Include="Views\Shoes\Banner_Top.cshtml" />
+    <Content Include="Views\Shoes\banner1.cshtml" />
+    <Content Include="Views\Shoes\banner2.cshtml" />
+    <Content Include="Views\Shoes\banner3.cshtml" />
+    <Content Include="Views\Shoes\banner4.cshtml" />
+    <Content Include="Views\Shared\_LayoutShoes.cshtml" />
+    <Content Include="Views\Shared\_LayoutConfirm.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\Shared\_LayoutGioHang.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -389,8 +430,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\dbBANGiay.dbml.layout">
-      <DependentUpon>dbBANGiay.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
