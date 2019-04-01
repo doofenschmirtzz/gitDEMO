@@ -7,7 +7,7 @@ namespace Shoes24.Models
 {
     public class Giohang
     {
-        dbBanGiayDataContext db = new dbBanGiayDataContext();
+        dbBANGiayDataContext db = new dbBANGiayDataContext();
         public int iMaSanPham { set; get; }
         public string sTenSanPham { set; get; }
         public string sAnh { set; get; }

@@ -10,7 +10,7 @@ namespace Shoes24.Controllers
     public class ShoesController : Controller
     {
         // GET: Shoes
-        dbBanGiayDataContext data = new dbBanGiayDataContext();
+        dbBANGiayDataContext data = new dbBANGiayDataContext();
 
         public ActionResult Laygiayton()
         {
