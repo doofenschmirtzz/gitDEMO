@@ -775,6 +775,241 @@ namespace ShoesStore_agforl.Controllers
             }
             return View(sp);
         }
+        public ActionResult SlidePage(int? page)
+        {
+            if (Session["Taikhoanadmin"] == null || Session["Taikhoanadmin"].ToString() == "")
+            {
+                return RedirectToAction("Login");
+            }
+
+
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+            return View(data.Slides.ToList().OrderBy(n => n.ID).ToPagedList(pageNumber, pageSize));
+
+        }
+        public ActionResult ChitietSlide(int id)
+        {
+            //Lay ra doi tuong sach theo ma
+            Slide sp = data.Slides.SingleOrDefault(n => n.ID == id);
+            ViewBag.ID = sp.ID;
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
+
+        [HttpGet]
+        public string getImageSlide(int id)
+        {
+            return data.Slides.SingleOrDefault(n => n.ID == id).IMG;
+        }
+        public ActionResult EditSlide(int id)
+        {
+            Slide sp = data.Slides.SingleOrDefault(n => n.ID == id);
+            ViewBag.ID = sp.ID;
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditSlide(Slide sp, HttpPostedFileBase fileUpload)
+        {
+
+            Slide spm = data.Slides.SingleOrDefault(n => n.ID == sp.ID);
+            var brand = sp.Brand;
+            var slogan = sp.Slogan;
+            var Anh = sp.IMG;
+
+            spm.IMG = Anh;
+            spm.Slogan = slogan;
+            spm.Brand = brand;
+
+
+
+            if (ModelState.IsValid)
+            {
+                if (fileUpload == null)
+                {
+                    spm.IMG = getImageSlide(sp.ID);
+                }
+                else
+                {
+                    if (ModelState.IsValid)
+                    {
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        var path = Path.Combine(Server.MapPath("~/images/"), fileName);
+                        if (System.IO.File.Exists(path))
+                        {
+                            sp.IMG = fileName;
+                            ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                            return View(sp);
+                        }
+                        else
+                        {
+                            fileUpload.SaveAs(path);
+                            spm.IMG = fileName;
+                        }
+                    }
+                }
+                data.SubmitChanges();
+            }
+            return RedirectToAction("SlidePage");
+        }
+        public ActionResult Contacts(int? page)
+        {
+            if (Session["Taikhoanadmin"] == null || Session["Taikhoanadmin"].ToString() == "")
+            {
+                return RedirectToAction("Login");
+            }
+
+
+            int pageNumber = (page ?? 1);
+            int pageSize = 10;
+            return View(data.Contacts.ToList().OrderBy(n => n.ID).ToPagedList(pageNumber, pageSize));
+
+        }
+        public ActionResult ChitietContact(int id)
+        {
+            //Lay ra doi tuong sach theo ma
+            Contact sp = data.Contacts.SingleOrDefault(n => n.ID == id);
+            ViewBag.ID = sp.ID;
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
+        [HttpGet]
+        public ActionResult XoaContact(int id)
+        {
+            //Lay ra doi tuong sach can xoa theo ma
+            Contact hang = data.Contacts.SingleOrDefault(n => n.ID == id);
+            //ViewBag.MaLoai = dc.MaLoai;
+            if (hang == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+
+            return View(hang);
+        }
+        [HttpPost, ActionName("XoaContact")]
+        public ActionResult Xacnhanxoacontact(int id)
+        {
+            //Lay ra doi tuong sach can xoa theo ma
+            Contact hang = data.Contacts.SingleOrDefault(n => n.ID == id);
+            //ViewBag.MaLoai = dc.MaLoai;
+            if (hang == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            data.Contacts.DeleteOnSubmit(hang);
+            data.SubmitChanges();
+            return RedirectToAction("Contacts", "Admin");
+        }
+        public ActionResult CountContact()
+        {
+            var Model = data.Contacts.OrderByDescending(model => model.ID);
+            int count = Model.Count();
+
+            return PartialView(Model.ToList());
+        }
+        public ActionResult BannerQC()
+        {
+            if (Session["Taikhoanadmin"] == null || Session["Taikhoanadmin"].ToString() == "")
+            {
+                return RedirectToAction("Login");
+            }
+
+
+
+            return View(data.Banners.ToList().OrderBy(n => n.MaBanner));
+
+        }
+        public ActionResult ChitietBannerQC(int id)
+        {
+            //Lay ra doi tuong sach theo ma
+            Banner sp = data.Banners.SingleOrDefault(n => n.MaBanner == id);
+            ViewBag.MaBanner = sp.MaBanner;
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
+        [HttpGet]
+        public string getImageQC(int id)
+        {
+            return data.Banners.SingleOrDefault(n => n.MaBanner == id).Image;
+        }
+        public ActionResult SuaBannerQC(int id)
+        {
+            Banner sp = data.Banners.SingleOrDefault(n => n.MaBanner == id);
+            ViewBag.MaBanner = sp.MaBanner;
+            if (sp == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sp);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        public ActionResult SuaBannerQC(Banner sp, HttpPostedFileBase fileUpload)
+        {
+
+            Banner spm = data.Banners.SingleOrDefault(n => n.MaBanner == sp.MaBanner);
+            ViewBag.MaSanPham = sp.MaBanner;
+            var tittle = sp.title;
+            var url = sp.Url;
+            var Anh = sp.Image;
+
+            spm.Image = Anh;
+            spm.title = tittle;
+            spm.Url = url;
+
+
+            if (ModelState.IsValid)
+            {
+                if (fileUpload == null)
+                {
+                    spm.Image = getImageQC(sp.MaBanner);
+                }
+                else
+                {
+                    if (ModelState.IsValid)
+                    {
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        var path = Path.Combine(Server.MapPath("~/images/"), fileName);
+                        if (System.IO.File.Exists(path))
+                        {
+                            sp.Image = fileName;
+                            ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                            return View(sp);
+                        }
+                        else
+                        {
+                            fileUpload.SaveAs(path);
+                            spm.Image = fileName;
+                        }
+                    }
+                }
+                data.SubmitChanges();
+            }
+            return RedirectToAction("SuaBannerQC");
+        }
 
     }
 }
