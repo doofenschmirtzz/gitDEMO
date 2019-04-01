@@ -24,7 +24,11 @@ namespace Shoes24.Models
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SHOPGIAY")]
 
+
 	public partial class dbBanGiayDataContext : System.Data.Linq.DataContext
+
+
+	public partial class dbBANGiayDataContext : System.Data.Linq.DataContext
 
 	{
 		
@@ -35,6 +39,12 @@ namespace Shoes24.Models
     partial void InsertBanner(Banner instance);
     partial void UpdateBanner(Banner instance);
     partial void DeleteBanner(Banner instance);
+
+
+    partial void InsertSlide(Slide instance);
+    partial void UpdateSlide(Slide instance);
+    partial void DeleteSlide(Slide instance);
+
 
     partial void InsertSlide(Slide instance);
     partial void UpdateSlide(Slide instance);
@@ -63,6 +73,7 @@ namespace Shoes24.Models
 		
 		public dbBanGiayDataContext() {}
 
+
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
@@ -84,7 +95,13 @@ namespace Shoes24.Models
     partial void InsertSanPham(SanPham instance);
     partial void UpdateSanPham(SanPham instance);
     partial void DeleteSanPham(SanPham instance);
+
     
+    #endregion
+		
+		public dbBANGiayDataContext() : 
+
+
     #endregion
 		
 		public dbBANGiayDataContext() : 
@@ -96,6 +113,10 @@ namespace Shoes24.Models
 		
 
 
+
+		public dbBANGiayDataContext(string connection) : 
+
+
 		public dbBANGiayDataContext(string connection) : 
 
 				base(connection, mappingSource)
@@ -103,6 +124,10 @@ namespace Shoes24.Models
 			OnCreated();
 		}
 		
+
+
+
+		public dbBANGiayDataContext(System.Data.IDbConnection connection) : 
 
 
 		public dbBANGiayDataContext(System.Data.IDbConnection connection) : 
@@ -113,7 +138,11 @@ namespace Shoes24.Models
 		}
 		
 
+
 		
+		public dbBANGiayDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+
+
 		public dbBANGiayDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 
 				base(connection, mappingSource)
@@ -122,7 +151,11 @@ namespace Shoes24.Models
 		}
 		
 
+
 		
+		public dbBANGiayDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+
+
 		public dbBANGiayDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 
 				base(connection, mappingSource)
@@ -204,7 +237,6 @@ namespace Shoes24.Models
 			}
 		}
 
-		
 		public System.Data.Linq.Table<KhachHang> KhachHangs
 		{
 			get
@@ -398,6 +430,7 @@ namespace Shoes24.Models
 	}
 	
 
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Slide")]
 	public partial class Slide : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -550,7 +583,12 @@ namespace Shoes24.Models
 		private EntityRef<HoaDon> _HoaDon;
 		
 
+
 		private EntityRef<SanPham> _SanPham;
+
+
+		private EntityRef<SanPham> _SanPham;
+		
 
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -569,6 +607,10 @@ namespace Shoes24.Models
 		public ChiTietHoaDon()
 		{
 			this._HoaDon = default(EntityRef<HoaDon>);
+
+
+			this._SanPham = default(EntityRef<SanPham>);
+
 
 			this._SanPham = default(EntityRef<SanPham>);
 
@@ -951,6 +993,11 @@ namespace Shoes24.Models
 		private EntityRef<Group> _Group;
 		
 
+
+		private EntityRef<Role> _Role;
+		
+
+
 		private EntityRef<Role> _Role;
 		
 
@@ -967,6 +1014,10 @@ namespace Shoes24.Models
 		public Credential()
 		{
 			this._Group = default(EntityRef<Group>);
+
+
+			this._Role = default(EntityRef<Role>);
+
 
 			this._Role = default(EntityRef<Role>);
 
@@ -1226,6 +1277,11 @@ namespace Shoes24.Models
 		private EntitySet<Credential> _Credentials;
 		
 
+
+		private EntitySet<QuanTriVien> _QuanTriViens;
+		
+
+
 		private EntitySet<QuanTriVien> _QuanTriViens;
 		
 
@@ -1242,6 +1298,10 @@ namespace Shoes24.Models
 		public Group()
 		{
 			this._Credentials = new EntitySet<Credential>(new Action<Credential>(this.attach_Credentials), new Action<Credential>(this.detach_Credentials));
+
+
+			this._QuanTriViens = new EntitySet<QuanTriVien>(new Action<QuanTriVien>(this.attach_QuanTriViens), new Action<QuanTriVien>(this.detach_QuanTriViens));
+
 
 			this._QuanTriViens = new EntitySet<QuanTriVien>(new Action<QuanTriVien>(this.attach_QuanTriViens), new Action<QuanTriVien>(this.detach_QuanTriViens));
 
@@ -1314,7 +1374,6 @@ namespace Shoes24.Models
 				this._QuanTriViens.Assign(value);
 			}
 		}
-		
 
 		public event PropertyChangingEventHandler PropertyChanging;
 		
@@ -1374,6 +1433,11 @@ namespace Shoes24.Models
 		private string _TenHangSanPham;
 		
 
+
+		private EntitySet<SanPham> _SanPhams;
+		
+
+
 		private EntitySet<SanPham> _SanPhams;
 		
 
@@ -1389,6 +1453,10 @@ namespace Shoes24.Models
 		
 		public Hang()
 		{
+
+
+			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
+
 
 			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
 
@@ -1506,9 +1574,13 @@ namespace Shoes24.Models
 		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
 		
 
+
 		private EntityRef<KhachHang> _KhachHang;
 		
 
+
+		private EntityRef<KhachHang> _KhachHang;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1530,6 +1602,9 @@ namespace Shoes24.Models
 		public HoaDon()
 		{
 			this._ChiTietHoaDons = new EntitySet<ChiTietHoaDon>(new Action<ChiTietHoaDon>(this.attach_ChiTietHoaDons), new Action<ChiTietHoaDon>(this.detach_ChiTietHoaDons));
+
+			this._KhachHang = default(EntityRef<KhachHang>);
+
 
 			this._KhachHang = default(EntityRef<KhachHang>);
 
@@ -1676,6 +1751,7 @@ namespace Shoes24.Models
 		}
 		
 
+
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1725,11 +1801,56 @@ namespace Shoes24.Models
 		public event PropertyChangedEventHandler PropertyChanged;
 		
 		protected virtual void SendPropertyChanging()
+
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDon", Storage="_KhachHang", ThisKey="MaKhachHang", OtherKey="MaKhachHang", IsForeignKey=true)]
+		public KhachHang KhachHang
+
+		{
+			get
+			{
+
+				this.PropertyChanging(this, emptyChangingEventArgs);
+
+
+				return this._KhachHang.Entity;
+			}
+			set
+			{
+				KhachHang previousValue = this._KhachHang.Entity;
+				if (((previousValue != value) 
+							|| (this._KhachHang.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KhachHang.Entity = null;
+						previousValue.HoaDons.Remove(this);
+					}
+					this._KhachHang.Entity = value;
+					if ((value != null))
+					{
+						value.HoaDons.Add(this);
+						this._MaKhachHang = value.MaKhachHang;
+					}
+					else
+					{
+						this._MaKhachHang = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("KhachHang");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, emptyChangingEventArgs);
-
+h
 			}
 		}
 		
